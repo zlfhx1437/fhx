@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/template.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/cart.css" />
+	</head>
+	<body>
+		<div id="box2">
+			<div class="top">
+				<ul class="product">
+					<li class="check"><input type="checkbox" />全选</li>
+					<li class="wupin">物品</li>
+					<li class="num">数量</li>
+					<li class="danjia">单价</li>
+					<li class="xiaoji">小计</li>
+					<li class="caozuo">操作</li>
+				</ul>
+			</div>
+			<div class="cart">
+
+			</div>
+			
+			<div class="heji">
+				<p>合计:￥<span>000</span><a href="#" id="go">结算</a></p>
+			</div>
+			
+		</div>
+		<script type="text/html" id="Cart">
+			<ul>
+				<li class="one">
+					<input type="checkbox" />
+				</li>
+				<li class="two">
+					<a href="index.html"><img src="{{img}}" /></a>
+				</li>
+				<li class="three">
+					<p>{{name}}</p>
+					<span>{{jieshao}}</span>
+				</li>
+				<li class="four" data_id="{{id}}">
+					<div class="sum">
+						<span class="good_jian" style="cursor: pointer;">-</span>
+						<span class="good_data">{{num}}</span>
+						<span class="good_jia"  style="cursor: pointer;">+</span>
+					</div>	
+				</li>
+				<li class="five">￥<i>{{price}}</i></li>
+				<li class="six">￥<span></span></li>
+				<li class="seven"><input type="button" value="删除" class="delButton"/></li>
+			</ul>
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				var strToObj = JSON.parse($.cookie("cart"));
+				$.getJSON("js/common.json").done(function(data) {
+					for(var j in strToObj) {
+						var _data = data.product[j];
+						_data["num"] = strToObj[j];
+						_data["id"] = j
+						console.log(_data["num"])
+						var html = template("Cart", _data);
+						$(".cart").append(html);
+					}
+					var foo = function(){
+						$(".four").each(function(){
+							var num = $(this).find(".sum").find(".good_data").text();
+							var dj = $(this).siblings(".five").find("i").text();
+							var xj = num * dj;
+							
+							$(this).siblings(".six").find("span").text(xj);
+						
+						})
+					}
+					foo();
+					$(".good_jia").click(function() {
+						var val = $(this).siblings(".good_data").text();
+						val++;
+						
+						console.log(val)
+						$(this).siblings(".good_data").text(val);
+						foo();
+						heji();
+						var id = $(this).parent().parent().attr("data_id")
+						strToObj[id] = val;
+						var obj = JSON.stringify(strToObj);
+						console.log(obj);
+						$.cookie("cart", obj, {
+							expires: 7,
+							path: "/"
+						})
+						
+						
+					});
+					$(".good_jian").click(function() {
+						var val = $(this).siblings(".good_data").text();
+						if(val > 1) {
+							val--;
+							$(this).siblings(".good_data").text(val);
+							foo();
+							heji();
+						} else {
+							$(this).siblings(".good_data").text("1");
+						}
+						var id = $(this).parent().parent().attr("data_id");
+						strToObj[id] = val;
+						var obj = JSON.stringify(strToObj);
+						$.cookie("cart", obj, {
+							expires: 7,
+							path: "/"
+						})
+					});
+					var heji = function(){
+						var hj = 0;
+						$(".six span").each(function(){
+							var xj = parseInt($(this).text());
+							hj += xj;
+						})
+						console.log(hj);
+						$(".heji span").text(hj);
+					}
+					heji();
+					
+					$(".delButton").click(function(){
+						$(this).parent().parent().remove();
+						var id=$(this).parent().siblings(".four").attr("data_id");
+						delete strToObj[id]
+						heji();
+						var obj = JSON.stringify(strToObj);
+						$.cookie("cart", obj, {
+								expires: 7,
+								path: "/"
+						})
+						
+					})
+				})
+			})
+			
+		</script>
+	</body>
+</html>

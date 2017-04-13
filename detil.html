@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/template.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/detil.css"/>
+	</head>
+	<body>
+		<div id="box1">
+			<div class="left">
+				<div class="small">
+					
+					<div class="mask"></div>
+				</div>
+				<div class="big">
+				</div>
+			</div>
+			<div class="right">
+				<div class="top">
+					<a href="java:void(0)"></a>
+				</div>
+				<p class="jieshao"></p>
+				<div class="price">
+					<span class="money">单价：￥<i></i></span>
+					<a href="java:void(0)">评价：<span></span></a>
+				</div>
+				
+			</div>
+		</div>
+		<div id="cart"><a href="cart.html">购物车<span>0</span></a></div>
+		<script type="text/javascript">
+			$(function(){
+				$.getJSON("js/common.json").done(function(data) {
+					var id = $.cookie("pro");
+					console.log(data);
+					$(".small").append("<img id='productImg' src=" + data.product[id].img + "  />");
+					$(".big").append("<img id='productImg' src=" + data.product[id].img + "  />");
+					$(".top a").append(data.product[id].name);
+					$(".right .jieshao").append(data.product[id].jieshao);
+					$(".price .money i").append(data.product[id].price);
+					$(".price a span").append(data.product[id].pingjia);
+					$(".right").append("<button class='addButton' data_id='"+ data.product[id].id +"'>加购物车</button>")
+					
+					if($.cookie("cart")) {
+						var obj = JSON.parse($.cookie("cart"));
+					} else {
+						var obj = {};
+					}
+					var sum = 0;
+					for(var i in obj) {
+						sum += obj[i];
+					}
+					$("#cart span").text(sum);
+					$(".addButton").click(function(){
+						var sum = 1;
+						for(var i in obj) {
+							sum += obj[i];
+						}
+						$("#cart span").text(sum);
+					});
+					$(".addButton").click(function(){
+						var data_id = $(this).attr("data_id");
+	
+						if(obj[data_id]) {
+							obj[data_id] = ++obj[data_id];
+						} else {
+							obj[data_id] = 1;
+						}
+						$.cookie("cart", JSON.stringify(obj), {
+							expires: 7,
+							path: "/"
+						});
+						console.log(JSON.parse($.cookie("cart")));
+						
+					});
+					
+
+					$(".small").mousemove(function(e) {
+						var evt = e || event;
+						var x = evt.clientX;
+						var y = evt.clientY;
+						var xban = ($(".mask").width()) / 2;
+						var yban = ($(".mask").height()) / 2;
+						var x1 = x - xban - $(".small").offset().left;
+						var y1 = y - yban - $(".small").offset().top;
+						if(x1 <= 0) {
+							x1 = 0;
+						} else if(x1 > $(".small img").width() - $(".mask").width()) {
+							x1 = $(".small img").width() - $(".mask").width();
+						}
+						if(y1 < 0) {
+							y1 = 0;
+						} else if(y1 > $(".small img").height() - $(".mask").height()) {
+							y1 = $(".small img").height() - $(".mask").height();
+						}
+						$(".mask").css({ display: "block", left: x1, top: y1 });
+						$(".big").css("display", "block");
+						var pathx = x1 / ($(".mask").width() - $("small").width());
+						var pathy = y1 / ($(".mask").height() - $("small").height());
+			
+						var x2 = pathx * ($(".big").width() - $(".big").find("img").width());
+						var y2 = pathy * ($(".big").height() - $(".big").find("img").height());
+						$(".big").find("img").css({ left: x2, top: y2 });
+			
+					})
+					$(".small").mouseleave(function() {
+						$(".mask").css("display", "none");
+						$(".big").css("display", "none");
+					})
+
+					
+					
+					
+				})
+			})
+		</script>
+		
+		
+		
+	</body>
+</html>
+

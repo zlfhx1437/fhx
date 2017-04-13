@@ -1,0 +1,158 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+div{display: block;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#5e5e5e;}
+h1,h2,h3,h4,h5,h6{font-weight:100;}
+body{font-size:12px; font-family:"微软雅黑";}
+input,a{outline:none;}
+
+#box2{
+	width: 1000px;
+	min-height: 200px;
+	margin: 50px auto;
+	border: 2px solid #000000;
+	position: relative;
+	padding-bottom: 80px;
+}
+#box2:after{
+	display: block;
+	clear: both;
+	content: "";
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+.top{
+	width:900px;
+	margin: 10px auto 2px;
+	height: 50px;
+	border: 1px solid #666;
+	background: #CCCCCC;
+}
+.top li{
+	float: left;
+	text-align: center;
+	line-height: 50px;
+}
+.top li.check{
+	width:120px;
+}
+.top li.wupin{
+	width:320px;
+}
+.top li.num{
+	width:120px;
+}
+.top li.danjia{
+	width: 120px;
+}
+.top li.xiaoji{
+	width:110px;
+}
+.top li.caozuo{
+	width: 110px;
+}
+.cart{
+	width:900px;
+	margin: 0 auto;
+}
+.cart ul{
+	width:900px;
+	height: 120px;
+	border: 1px solid #CCCCCC;
+}
+.cart li{
+	float: left;
+	text-align: center;
+	line-height: 100px;
+}
+.cart li.one{
+	width:120px;
+}
+.cart li.two{
+	width:150px;
+	text-align: center;
+}
+.cart li.two a{
+	
+	width:100px;
+	height:100px;
+	margin-top: 10px;
+	display: block;
+	
+}
+.cart li.two a img{
+	width:100%;
+	height:100%;
+}
+.cart li.three{
+	width: 170px;
+	text-align: left;
+}
+.cart li.three p{
+	line-height: 0;
+	margin-top: 20px;
+	display: block;
+	font-size: 15px;
+	color: red;
+}
+.cart li.three span{
+	line-height: 0;
+	
+}
+.cart li.four{
+	width:120px;
+}
+.cart li.four .sum span {
+    float: left;
+    display: block;
+    border-right: 1px solid #E6DEEA;
+    width: 28px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.cart li.four .sum{
+	height: 30px;
+    float: left;
+    margin-top: 45px;
+    width: 100px;
+    border: 1px solid #E6DEEA;
+}
+.cart li.four .sum span.good_data{
+	width: 40px;
+}
+.cart li.four .sum span.good_jia{
+	border: 0;
+}
+.cart li.five{
+	width: 120px;
+}
+.cart li.six{
+	width:110px;
+}
+.cart li.seven{
+	width:110px;
+}
+
+
+.heji{
+	position: absolute;
+	bottom: 0;
+	left: 50px;
+	width:900px;
+	margin-top: 50px;
+	border: 1px solid #666666;
+	height: 50px;
+	background: #CCCCCC;
+}
+
+.heji p{
+	float: right;
+	line-height: 50px;
+	font-size: 30px;
+	color: red;
+}
+.heji p a{ margin-left: 25px; padding: 5px 10px; background: #F00; color: #fff; line-height: 50px; }

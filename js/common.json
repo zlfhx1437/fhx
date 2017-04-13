@@ -1,0 +1,165 @@
+{
+	"product":{
+		"001":{
+			"id":"001",
+			"img":"img/pic_001.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"100",
+			"jieshao":"这是第一张",
+			"pingjia":"111"
+		},
+		"002":{
+			"id":"002",
+			"img":"img/pic_002.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"200",
+			"jieshao":"这是第二张",
+			"pingjia":"222"
+		},
+		"003":{
+			"id":"003",
+			"img":"img/pic_003.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"300",
+			"jieshao":"这是第三张",
+			"pingjia":"333"
+		},
+		"004":{
+			"id":"004",
+			"img":"img/pic_004.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"400",
+			"jieshao":"这是第四张",
+			"pingjia":"444"
+		},
+		"005":{
+			"id":"005",
+			"img":"img/pic_005.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"500",
+			"jieshao":"这是第五张",
+			"pingjia":"555"
+		},
+		"006":{
+			"id":"006",
+			"img":"img/pic_006.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"600",
+			"jieshao":"这是第六张",
+			"pingjia":"666"
+		},
+		"007":{
+			"id":"007",
+			"img":"img/pic_007.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"300",
+			"jieshao":"这是第三张",
+			"pingjia":"333"
+		},
+		"008":{
+			"id":"008",
+			"img":"img/pic_008.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"400",
+			"jieshao":"这是第四张",
+			"pingjia":"444"
+		},
+		"009":{
+			"id":"009",
+			"img":"img/pic_009.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"500",
+			"jieshao":"这是第五张",
+			"pingjia":"555"
+		},
+		"010":{
+			"id":"010",
+			"img":"img/pic_010.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"600",
+			"jieshao":"这是第六张",
+			"pingjia":"666"
+		},"011":{
+			"id":"011",
+			"img":"img/pic_011.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"100",
+			"jieshao":"这是第一张",
+			"pingjia":"111"
+		},
+		"012":{
+			"id":"012",
+			"img":"img/pic_012.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"200",
+			"jieshao":"这是第二张",
+			"pingjia":"222"
+		},
+		"013":{
+			"id":"013",
+			"img":"img/pic_013.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"300",
+			"jieshao":"这是第三张",
+			"pingjia":"333"
+		},
+		"014":{
+			"id":"014",
+			"img":"img/pic_014.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"400",
+			"jieshao":"这是第四张",
+			"pingjia":"444"
+		},
+		"015":{
+			"id":"015",
+			"img":"img/pic_015.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"500",
+			"jieshao":"这是第五张",
+			"pingjia":"555"
+		},
+		"016":{
+			"id":"016",
+			"img":"img/pic_016.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"600",
+			"jieshao":"这是第六张",
+			"pingjia":"666"
+		},
+		"017":{
+			"id":"017",
+			"img":"img/pic_017.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"300",
+			"jieshao":"这是第三张",
+			"pingjia":"333"
+		},
+		"018":{
+			"id":"018",
+			"img":"img/pic_018.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"400",
+			"jieshao":"这是第四张",
+			"pingjia":"444"
+		},
+		"019":{
+			"id":"019",
+			"img":"img/pic_019.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"500",
+			"jieshao":"这是第五张",
+			"pingjia":"555"
+		},
+		"020":{
+			"id":"020",
+			"img":"img/pic_020.jpg",
+			"name":"凡客T恤 义 林冲 白色",
+			"price":"600",
+			"jieshao":"这是第六张",
+			"pingjia":"666"
+		}
+	
+	}
+
+}
